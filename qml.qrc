@@ -1,0 +1,48 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>FirstPage.qml</file>
+        <file>img/1st.png</file>
+        <file>img/ac.png</file>
+        <file>img/at.png</file>
+        <file>img/back1.png</file>
+        <file>img/c.png</file>
+        <file>img/check.png</file>
+        <file>img/done.qml</file>
+        <file>img/down.png</file>
+        <file>img/end.png</file>
+        <file>img/et.png</file>
+        <file>img/ex.png</file>
+        <file>img/extend.png</file>
+        <file>img/gs.png</file>
+        <file>img/half.png</file>
+        <file>img/images (1).png</file>
+        <file>img/l2.png</file>
+        <file>img/l3.png</file>
+        <file>img/l4.png</file>
+        <file>img/l5.png</file>
+        <file>img/logo.png</file>
+        <file>img/main.png</file>
+        <file>img/men.png</file>
+        <file>img/n.png</file>
+        <file>img/pro.png</file>
+        <file>img/prob.png</file>
+        <file>img/sec.png</file>
+        <file>img/start.png</file>
+        <file>img/t2.png</file>
+        <file>img/try.png</file>
+        <file>img/up.png</file>
+        <file>img/user.png</file>
+        <file>img/x.png</file>
+        <file>img/x2.png</file>
+        <file>img/y.png</file>
+        <file>img/yes.png</file>
+        <file>Phase2.qml</file>
+        <file>ThirdPage.qml</file>
+        <file>End.qml</file>
+        <file>Extend.qml</file>
+        <file>AddTime.qml</file>
+        <file>Choice.qml</file>
+        <file>Last.qml</file>
+    </qresource>
+</RCC>
