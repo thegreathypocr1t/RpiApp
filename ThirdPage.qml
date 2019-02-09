@@ -13,6 +13,18 @@ Item {
 
     signal closedEvent(var trigger)
 
+    Timer{
+        id: timer
+        interval: 250
+        running: false
+        repeat: false
+        onTriggered: post()
+    }
+
+    function recog() {
+        timer.start()
+    }
+
     Image {
 
         id: image
@@ -105,7 +117,46 @@ Item {
 
                }
            }
-
        }
 
+    Timer{
+        id: timer2
+        interval: 5000
+        running: false
+        repeat: false
+        onTriggered: faceRecognition.offLED()
+    }
+
+    function post(){
+        console.log("posting to API")
+
+        var xhr = new XMLHttpRequest()
+                var link = "http://192.168.1.25:3000/classlog/pi"
+                xhr.open("POST",link,true);
+                xhr.setRequestHeader("Content-Type", "application/json")
+                xhr.send(JSON.stringify({
+                    "ipaddr": faceRecognition.getIpaddr(),
+                    "idEmployee": faceRecognition.faceRecog(),
+                    "transactionType": 0
+                }));
+
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === XMLHttpRequest.DONE) {
+                console.log(xhr.responseText)
+
+                var res = JSON.parse(xhr.responseText);
+                faceRecognition.setLogID(res.logID);
+                console.log(faceRecognition.getLogID());
+
+                if(res.result === 1) {
+                    faceRecognition.onLED()
+                    timer2.start()
+                    closedEvent(1)
+                }
+
+            }
+        }
+
+        console.log("post function done")
+    }
 }

@@ -23,6 +23,7 @@ Window {
             onClosedEvent: {
                 firstPage.visible = false
                 secondPage.visible=true
+                console.log("Phase2 Visible")
             }
 
         }
@@ -35,7 +36,8 @@ Window {
             onClosedEvent: {
                 secondPage.visible=false
                 thirdPage.visible=true
-
+                console.log("ThirdPage Visible")
+                thirdPage.recog()
             }
         }
 
@@ -48,10 +50,15 @@ Window {
 
                 thirdPage.visible = false
 
-                if(trigger === 0 )
+                if(trigger === 0 ) {
                     secondPage.visible=true
-                if(trigger === 1)
+                    console.log("Phase2 Visible")
+                }
+
+                if(trigger === 1) {
                     endPage.visible=true
+                    console.log("End Visible")
+                }
 
             }
         }
@@ -68,6 +75,7 @@ Window {
             onClosedEvent: {
                 endPage.visible=false
                 ext.visible=true
+                console.log("Extend Visible")
             }
         }
 
@@ -80,6 +88,8 @@ Window {
                 ext.visible=false
 
                 time.visible=true
+                console.log("AddTime Visible")
+
             }
         }
 
@@ -91,10 +101,18 @@ Window {
             onClosedEvent: {
                 time.visible= false
 
-                if(trigger === 0)
+                if(trigger === 0){
                     choi.visible= true
-                if(trigger === 1)
+                    console.log("Choice Visible")
+                }
+
+
+                if(trigger === 1){
                     ext.visible=true
+                    console.log("Extend Visible")
+                }
+
+
             }
         }
 
@@ -106,10 +124,15 @@ Window {
             onClosedEvent: {
                 choi.visible=false
 
-                if(trigger === 0)
+                if(trigger === 0) {
                     las.visible=true
+                    console.log("Last Visible")
+                }
+
+
                 if(trigger === 1){
                     ext.visible=true
+                    console.log("Extend Visible")
                 }
             }
         }
