@@ -104,19 +104,6 @@ Item {
     {
         id: loader
         anchors.fill: parent
-
-           Button {
-               id: temp
-               x: 405
-               y: 406
-               text: qsTr("temporary button")
-               onClicked: {
-
-                   closedEvent(1) // end.qml
-                   windows9.visible=false;
-
-               }
-           }
        }
 
     Timer{

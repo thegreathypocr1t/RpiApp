@@ -15,6 +15,17 @@ Window {
         id:stackView
         anchors.fill: parent
 
+        Timer{
+            id: timer
+            interval: 3000
+            running: false
+            repeat: false
+            onTriggered: {
+                endPage.visible=false
+                ext.visible=true
+            }
+        }
+
         FirstPage{
             id:firstPage
             anchors.fill:parent
@@ -58,14 +69,11 @@ Window {
                 if(trigger === 1) {
                     endPage.visible=true
                     console.log("End Visible")
+                    timer.start();
                 }
 
             }
         }
-
-
-
-
 
         End{
             id:endPage
